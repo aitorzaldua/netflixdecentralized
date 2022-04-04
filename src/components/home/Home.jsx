@@ -85,6 +85,39 @@ const Home = () => {
            hasFooter={false}
            width='1000px'
           >
+            <div className='modalContent'>
+              <img src={selectedFilm.Scene}  alt='' className='modalImg'></img>
+              <img src={selectedFilm.Logo} alt='' className='modalLogo'></img>
+
+              <div className='modalPlayButton'>
+                <Button
+                  icon='chevronRightX2'
+                  onClick={function noRefCheck(){}}
+                  text='Play'
+                  theme="secondary"
+                  type="button"
+                />
+                <Button
+                  icon='plus'
+                  onClick={function noRefCheck(){}}
+                  text='Add to My List'
+                  theme="translucent"
+                  type="button"
+                />
+              </div>
+            </div>
+            
+            <div className='movieInfo'>
+                  <div className='description'>
+                    <div className='details'>
+                      <span>{selectedFilm.Year}</span>
+                      <span>{selectedFilm.Duration}</span>
+                    </div>
+                    {selectedFilm.Description}
+                  </div>
+                </div>
+
+
          </Modal>
 
        </div>
