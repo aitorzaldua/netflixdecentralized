@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './player.css';
-import {ConnectButton, Icon, TabList, Tab  } from 'web3uikit';
+import {TabList, Tab  } from 'web3uikit';
 
 const Player = () => {
   return (
