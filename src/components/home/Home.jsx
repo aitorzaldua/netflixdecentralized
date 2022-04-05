@@ -42,8 +42,17 @@ const Home = () => {
       message:'Please, Connect Your Crypto Wallet',
       title:'Not Authenticated',
       position:'topL'
-    })
-  }
+    });
+  };
+
+  const handleAddNotification = () => {
+    dispatch({
+      type:'success ',
+      message:'Movie Added to List',
+      title:'Success',
+      position:'topL'
+    });
+  };
  
 
   return (
@@ -100,16 +109,43 @@ const Home = () => {
                 )
               })
             }
-            </div>
+          </div>
       
        </Tab>
        <Tab tabKey={2} tabName={'Series'} isDisabled={true}></Tab>
        <Tab tabKey={3} tabName={'My List'}>
 
+
+
          <div className='ownListContent'>
-           <div className='title'>
-              Your Library
-           </div>
+           
+           {myMovies && isAuthenticated ? (
+             <>
+              <div className='ownThumbs'>
+              {
+                myMovies.map((e) => {
+                return (
+                  <img
+                    src={e.Thumnbnail}
+                    className="thumbnail"
+                    onClick={() => {
+                      setSelectedFilm(e);
+                      setVisible(true);
+                    }
+                    }
+                  alt=''></img>
+                )
+              })
+            }
+          </div>
+
+             </>
+             ):(
+                <div className='ownThumbs'>
+                  You need to Authenticate to view your own List
+                </div>
+             )
+           }
 
          </div>
 
@@ -148,6 +184,13 @@ const Home = () => {
                     text='Add to My List'
                     theme="translucent"
                     type="button"
+                    onClick={async () => {
+                      await Moralis.Cloud.run('updateMyList', {
+                        addrs: account,
+                        newFav: selectedFilm.Name,
+                      });
+                      handleAddNotification();
+                    }}
                   />
                   </>
                 ):(
