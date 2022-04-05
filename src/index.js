@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
 
-  <MoralisProvider appId="xxxxx" serverUrl="xxxxx">
+  <MoralisProvider appId="0iRwPzoqum8zGC9GCbZPDP2rJvZ1tBCkYQwl8vfl" serverUrl="https://ytloyiwqs4ap.usemoralis.com:2053/server">
     <NotificationProvider>
       <BrowserRouter>
         <App />
