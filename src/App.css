@@ -3,15 +3,18 @@
 }
 
 /* topBanner */
-.sc-iNWwEs{
-    color: white;
-    font-weight: bold;
-}
-.gmDRRz{
-    border-bottom: 2px solid #E50914;
+.sc-cjbZfG {
+    color: white !important;
+    font-weight: bold !important;
 }
 
-.sc-gSAPjG {
+/*Underscore Movies etc*/
+.IlWGs {
+    border-bottom: 2px solid #E50914 !important;
+}
+
+/*Movies-Series-MyList: Position & Visibility*/
+.sc-cjbZfG {
     margin-left: 160px;
     position: fixed;
     z-index: 2;
