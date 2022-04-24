@@ -1,0 +1,19 @@
+.container {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    z-index: -999;
+}
+
+.containerGradient {
+    background-image: linear-gradient(rgb(0,0,0,0.75), rgb(0,0,0,0.75));
+    height:100%;
+    width:100%
+}
+
+.frontText {
+    color: white;
+    z-index: 2;
+}
