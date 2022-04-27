@@ -8,12 +8,83 @@
 }
 
 .containerGradient {
-    background-image: linear-gradient(rgb(0,0,0,0.75), rgb(0,0,0,0.75));
+    background-image: linear-gradient(rgb(0,0,0,0.70), rgb(0,0,0,0.50));
     height:100%;
     width:100%
 }
 
-.frontText {
+.start-navBar{
+    display: flex;
+    flex-direction: row;
+}
+
+.startLogo{
+    height:10%;
+    width:10%;
+    padding: 10px 45px;
+
+}
+
+/* Connect button step1 */
+.sc-bBXxYQ {
+    position: absolute;
+    right: 90px;
+    top: 18px;
+    height: 50px !important;
+    width: 300px !important; 
+    
+}
+
+/* Connect button step 2 */
+.sc-BeQoi {
+    border-radius: 4px !important;
+    background-color: #E50914 !important;
+}
+
+/* Connect button step 3 */
+.sc-hTtwUo {
+    color: white !important;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+    background: #E50914 !important;
+}
+
+/* Connect button address */
+.sc-kgUAyh {
+    background: #E50914 !important;
+    border-radius: 4px !important;
+
+}
+
+
+.our-story-card-text {
+    display: flex;
+    flex-direction: column;
+    position: center;
     color: white;
-    z-index: 2;
+    text-align: center;
+    padding-top: 8rem;
+}
+
+.our-story-card-title{
+    font-size: 3.8rem;
+    line-height: 1.1;
+    max-width: 640px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.our-story-card-subtitle {
+    font-size: 1.125rem;
+    margin: 1rem auto;
+    font-size: 1.625rem;
+    font-weight: 400;
+    margin: 1rem auto;
+    padding-bottom: 2rem;
+}
+
+.wallet-title{
+    padding: 0 5%;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
 }
