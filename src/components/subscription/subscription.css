@@ -21,21 +21,19 @@
 }
 
 .gradient-background-subtitle {
-    background-color:#001114;
+    background:#001114;
     font-size: 1.125rem;
-    margin: 1rem auto;
-    font-size: 1.625rem;
     font-weight: 400;
-    margin: 1rem auto;
+    margin: auto;
     padding-left: 550px;
     display: flex;
     flex-direction: row;
-    position: center;
+    width: 75%;
 }
 
 .polygonLogo {
     height:10%;
-    width:3%;
+    width:5%;
     padding-right: 1rem;
 }
 
@@ -56,4 +54,33 @@
     max-width: 700px;
     margin: 0 auto;
     font-weight: 400;
+}
+
+.container__subs {
+    margin: 2rem 0 2.6rem;
+    color: var(--color-light);
+}
+
+.about__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem
+}
+
+.about__card {
+    /* background: linear-gradient(var(--color-bg-variant), transparent); */
+    background: green;
+    /* border: 1px solid transparent; */
+    border-radius: 0.5em;
+    padding: 2rem;
+    text-align: center;
+    transition: all 400ms ease;
+    
+}
+
+.about__card:hover {
+    color:blue !important;
+    background: transparent;
+    border-color: white;
+    cursor: default;
 }
