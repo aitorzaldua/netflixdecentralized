@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Home, Player, Start } from './components';
+import { Home, Player, Start, Subscription } from './components';
 import './App.css';
 
 
@@ -11,6 +11,7 @@ function App() {
         <Route path='/' element={<Start />} />
         <Route path='/home' element={<Home />} />
         <Route path='/player' element={<Player />} />
+        <Route path='/subscription' element={<Subscription />} />
       </Routes>
     </div>
   );

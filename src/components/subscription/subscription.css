@@ -1,0 +1,59 @@
+.gradient-background {
+    height:100vh;
+    background-image: linear-gradient(to bottom right, #001114,#004452, #005f73, #00bbe0);
+}
+
+.gradient-background-text {
+    display: flex;
+    flex-direction: column;
+    position: center;
+    color: white;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+    text-align: center;
+    padding-top: 8rem;
+}
+
+.gradient-background-title{
+    font-size: 3.8rem;
+    line-height: 1.1;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.gradient-background-subtitle {
+    background-color:#001114;
+    font-size: 1.125rem;
+    margin: 1rem auto;
+    font-size: 1.625rem;
+    font-weight: 400;
+    margin: 1rem auto;
+    padding-left: 550px;
+    display: flex;
+    flex-direction: row;
+    position: center;
+}
+
+.polygonLogo {
+    height:10%;
+    width:3%;
+    padding-right: 1rem;
+}
+
+.gradient-background-subtitle  h2{
+    font-size: 1.5rem;
+    margin: 0;
+    padding-top: 0.2rem;
+}
+
+.gradient-background-subtitle  p{
+    font-size: 1rem;
+    margin: 0;
+    padding-top: 0.7rem;
+}
+
+.gradient-background-wallet{
+    padding: 0 5%;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
+}

@@ -1,5 +1,6 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import './start.css';
+import { Link } from 'react-router-dom';
 import bg from '../../images/netflixStart.jpeg';
 import startLogo from '../../images/Netflix_logo_PNG1.png';
 
@@ -7,6 +8,15 @@ import {ConnectButton } from 'web3uikit';
 import { useMoralis  } from 'react-moralis';
 
 const Start = () => {
+
+  const { isAuthenticated } = useMoralis();
+  const router  = useRouter();
+
+  useEffect(() => {
+    if(!isAuthenticated) router.push('/');
+  }, [isAuthenticated] )
+
+
   return (
     <>
     <div className="container" style={{ backgroundImage: `url(${bg})` }}>
