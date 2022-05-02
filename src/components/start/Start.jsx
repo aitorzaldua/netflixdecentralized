@@ -9,13 +9,6 @@ import { useMoralis  } from 'react-moralis';
 
 const Start = () => {
 
-  const { isAuthenticated } = useMoralis();
-  const router  = useRouter();
-
-  useEffect(() => {
-    if(!isAuthenticated) router.push('/');
-  }, [isAuthenticated] )
-
 
   return (
     <>

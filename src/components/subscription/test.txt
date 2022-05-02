@@ -1,0 +1,91 @@
+import React from 'react'
+
+const test = () => {
+  return (
+    <div style={{alignItems: 'center',display: 'flex',gap: '5px'}}>
+        <span style={{color: '#000000', fontWeight: 600}}
+        >
+          $18
+        </span>
+        <span>
+          per month
+        </span>
+      </div>
+      <span>
+        Everything in Starter, plus
+      </span>
+      <div
+        style={{
+          color: '#68738D',
+          display: 'flex',
+          fontSize: '12px'
+        }}
+      >
+        <Icon
+          fill="green"
+          svg="checkmark"
+        />
+        Servers never Sleep
+      </div>
+      <div
+        style={{
+          color: '#68738D',
+          display: 'flex',
+          fontSize: '12px'
+        }}
+      >
+        <Icon
+          fill="green"
+          svg="checkmark"
+        />
+        More requests
+      </div>
+      <div
+        style={{
+          color: '#68738D',
+          display: 'flex',
+          fontSize: '12px'
+        }}
+      >
+        <Icon
+          fill="green"
+          svg="checkmark"
+        />
+        Higher limits
+      </div>
+      <div
+        style={{
+          color: '#68738D',
+          display: 'flex',
+          fontSize: '12px'
+        }}
+      >
+        <Icon
+          fill="green"
+          svg="checkmark"
+        />
+        Request auto scaling
+      </div>
+      <div
+        style={{
+          color: '#68738D',
+          display: 'flex',
+          fontSize: '12px'
+        }}
+      >
+        <Icon
+          fill="green"
+          svg="checkmark"
+        />
+        Email support
+      </div>
+      <Button
+        isFullWidth
+        text="Upgrade"
+        theme="primary"
+      />
+    </div>
+  )
+}
+
+export default test
