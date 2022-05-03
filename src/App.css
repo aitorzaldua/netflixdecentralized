@@ -51,3 +51,39 @@
     transition: background-color 1000ms linear !important;
 }
 
+/* WALLET */
+
+/* Connect button step1 */
+.sc-bBXxYQ {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    height: 35px !important;
+    width: 250px !important; 
+}
+
+/* Connect button step 2 */
+.sc-BeQoi {
+    border-radius: 4px !important;
+    background-color: #E50914 !important;
+}
+
+/* Connect button step 3 */
+.sc-cCs0jp {
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+    font-size: 12px !important;
+}
+.sc-hTtwUo {
+    color: #d9ed92 !important;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+    font-size: 12px !important;
+    background: #E50914 !important;
+}
+
+/* Connect button address */
+.sc-kgUAyh {
+    background: #E50914 !important;
+    border-radius: 14px !important;
+
+}
+

@@ -1,19 +1,29 @@
 import React from 'react';
 import './subscription.css';
 import startLogo from '../../images/Netflix_logo_PNG1.png';
+import Start from '../start/Start';
+import { useMoralis  } from 'react-moralis';
+import { Link } from 'react-router-dom';
 
-import {Icon, Card, Button, CryptoLogos, Avatar, Illustration } from 'web3uikit';
+
+import {ConnectButton, Icon, Card, Button, CryptoLogos, Illustration } from 'web3uikit';
 
 const Subscription = () => {
+
+    const { isAuthenticated } = useMoralis();
+
   return (
-    <div className='gradient-background'>
+      <>
+      {
+        isAuthenticated
+        ?
+        <div className='gradient-background'>
         <img className='startLogo' src = {startLogo} alt = 'netflix_logo' />
+        <ConnectButton />
 
         <div className='gradient-background-text'>
             <h1 className='gradient-background-text-title'>You´re only one step away from streaming.</h1>
             <h3 className='gradient-background-text-subtitle'>This is a Test App. Only official trailers are shown, never licensed material. The payment is always with test cryptocurrencies.</h3>
-            
-    
         </div>
 
         <div className='cards'>
@@ -23,21 +33,21 @@ const Subscription = () => {
                     <p>Ethereum Rinkeby Network.</p>
                 </div>
                 <div style={{alignItems: 'center',display: 'flex', gap: '5px'}}>
-                    <span style={{color: '#000000', fontWeight: 800}}>Payment:    0,0002</span>
+                    <span style={{color: '#000000', fontWeight: 800}}>Payment:    0,0004</span>
                     <Icon fill="#000000" size={14} svg="eth"/>
                     <span>/mo.</span>
                 </div>
                 <div style={{color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
-                    Every Trailer from the beggining.
+                    Every Trailer with the subscription.
                 </div>
                 <div style={{color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
-                    Always excelent quality.
+                    Decentralized video storage. 
                 </div>
                 <div style={{ color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
-                    All devices.
+                    See anywhere, anytime.
                 </div>
                 <div style={{color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
@@ -57,21 +67,21 @@ const Subscription = () => {
                     <p>Polygon Mumbai Network.</p>
                 </div>
                 <div style={{alignItems: 'center',display: 'flex', gap: '5px'}}>
-                    <span style={{color: '#000000', fontWeight: 800}}>Payment:    0.3</span>
+                    <span style={{color: '#000000', fontWeight: 800}}>Payment:    1.00</span>
                     <Icon fill="#000000" size={14} svg="matic"/>
                     <span>/mo.</span>
                 </div>
                 <div style={{color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
-                    Every Trailer from the beggining.
+                    Every Trailer with the subscription.
                 </div>
                 <div style={{color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
-                    Always excelent quality.
+                    Decentralized video storage. 
                 </div>
                 <div style={{ color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
-                    All devices.
+                    See anywhere, anytime.
                 </div>
                 <div style={{color: '#68738D', display: 'flex', fontSize: '12px'}}>
                     <Icon fill="green" svg="checkmark"/>
@@ -119,6 +129,10 @@ const Subscription = () => {
 
             </div>
     </div>
+        :
+        <Link to='/'>{<Start />}</Link>
+    }
+    </>
 
 )
 }

@@ -61,7 +61,7 @@ const Home = () => {
       <Logo />
     </div>
     <div className='connect'>
-    <Icon fill="#ffffff" size={24} svg="bell" />
+    {/* <Icon fill="#ffffff" size={24} svg="bell" /> */}
       <ConnectButton />
     </div>
      <div className='topBanner'>
