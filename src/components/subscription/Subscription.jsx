@@ -2,15 +2,37 @@ import React from 'react';
 import './subscription.css';
 import startLogo from '../../images/Netflix_logo_PNG1.png';
 import Start from '../start/Start';
-import { useMoralis  } from 'react-moralis';
+import { MoralisProvider, useMoralis, useWeb3Transfer  } from 'react-moralis';
 import { Link } from 'react-router-dom';
 
 
-import {ConnectButton, Icon, Card, Button, CryptoLogos, Illustration } from 'web3uikit';
+import {ConnectButton, Icon, Card, Button, CryptoLogos, Illustration, NotificationProvider } from 'web3uikit';
 
 const Subscription = () => {
 
-    const { isAuthenticated } = useMoralis();
+
+   
+    const { isAuthenticated, Moralis, chainId} = useMoralis();
+
+    console.log ("chainid es", chainId, NotificationProvider);
+
+    //Rinkeby
+    const { fetch, error, isFetching } = useWeb3Transfer({
+        type: "native",
+        amount: Moralis.Units.ETH(0.01),
+        receiver: "0xb4Fa8fBd2B88cb0229F2ABD15F32CA99cEE1D472",
+    });
+
+    const rinkebyNetwork = async () => {
+        await Moralis.enableWeb3();
+        await Moralis.transfer({native: "native", amount: Moralis.Units.ETH("0.0004"), receiver: "0xb4Fa8fBd2B88cb0229F2ABD15F32CA99cEE1D472"})
+      };
+
+      const mumbayNetwork = async () => {
+        await Moralis.enableWeb3();
+        await Moralis.transfer({native: "native", amount: Moralis.Units.ETH("1.00"), receiver: "0xb4Fa8fBd2B88cb0229F2ABD15F32CA99cEE1D472"})
+      };
+
 
   return (
       <>
@@ -58,7 +80,11 @@ const Subscription = () => {
                     Sell or give away whenever you want.
                 </div>
                 <br />
-                <Button isFullWidth text="Subscribe" theme="primary"/>
+                <Button isFullWidth text="Subscribe" theme="primary" onClick={
+                    chainId === "0x4" ?
+                    () => rinkebyNetwork()
+                    :console.log ("chain Id =", chainId)
+                }/>
             </Card>
 
             <Card onClick={null} setIsSelected={null}>
@@ -92,7 +118,11 @@ const Subscription = () => {
                     Sell or give away whenever you want.
                 </div>
                 <br />
-                <Button isFullWidth text="Subscribe" theme="primary" onClick={function noRefCheck(){}}/>
+                <Button isFullWidth text="Subscribe" theme="primary" onClick={ 
+                     chainId === "0x13881" ?
+                     () => mumbayNetwork()
+                     :console.log ("chain Id =", chainId)
+                 }/>
             </Card>
 
             <Card onClick={null} setIsSelected={null}>

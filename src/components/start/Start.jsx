@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react';
+import {React } from 'react';
 import './start.css';
 import { Link } from 'react-router-dom';
 import bg from '../../images/netflixStart.jpeg';

@@ -1,0 +1,7 @@
+const { isAuthenticated, Moralis, chainId, user} = useMoralis();
+
+    console.log ("chainid es", chainId);
+    const userAddress = user.attributes.ethAddress
+    console.log("user =>", userAddress);
+
+    
