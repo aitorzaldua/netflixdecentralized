@@ -2,11 +2,13 @@ import React from 'react';
 import './subscription.css';
 import startLogo from '../../images/Netflix_logo_PNG1.png';
 import Start from '../start/Start';
-import { MoralisProvider, useMoralis, useWeb3Transfer  } from 'react-moralis';
+import Home from '../home/Home';
+import { useMoralis } from 'react-moralis';
+/* import { useWeb3Transfer } from 'react-moralis'; */
 import { Link } from 'react-router-dom';
 
 
-import {ConnectButton, Icon, Card, Button, CryptoLogos, Illustration, NotificationProvider } from 'web3uikit';
+import {ConnectButton, Icon, Card, Button, CryptoLogos, Illustration } from 'web3uikit';
 
 const Subscription = () => {
 
@@ -14,23 +16,23 @@ const Subscription = () => {
    
     const { isAuthenticated, Moralis, chainId} = useMoralis();
 
-    console.log ("chainid es", chainId, NotificationProvider);
+    console.log ("chainid es", chainId);
 
-    //Rinkeby
+   /*  //Rinkeby
     const { fetch, error, isFetching } = useWeb3Transfer({
         type: "native",
         amount: Moralis.Units.ETH(0.01),
         receiver: "0xb4Fa8fBd2B88cb0229F2ABD15F32CA99cEE1D472",
-    });
+    }); */
 
     const rinkebyNetwork = async () => {
         await Moralis.enableWeb3();
-        await Moralis.transfer({native: "native", amount: Moralis.Units.ETH("0.0004"), receiver: "0xb4Fa8fBd2B88cb0229F2ABD15F32CA99cEE1D472"})
+        await Moralis.transfer({native: "native", amount: Moralis.Units.ETH("0.0004"), receiver: "0xe4867c1228Ec622E4976A67771C93aA20aD2B7b7"});
       };
 
       const mumbayNetwork = async () => {
         await Moralis.enableWeb3();
-        await Moralis.transfer({native: "native", amount: Moralis.Units.ETH("1.00"), receiver: "0xb4Fa8fBd2B88cb0229F2ABD15F32CA99cEE1D472"})
+        await Moralis.transfer({native: "native", amount: Moralis.Units.ETH("1.00"), receiver: "0xe4867c1228Ec622E4976A67771C93aA20aD2B7b7"});
       };
 
 
@@ -83,7 +85,7 @@ const Subscription = () => {
                 <Button isFullWidth text="Subscribe" theme="primary" onClick={
                     chainId === "0x4" ?
                     () => rinkebyNetwork()
-                    :console.log ("chain Id =", chainId)
+                    :console.log ("Please, change to Rinkeby in your Metamask")
                 }/>
             </Card>
 
@@ -121,7 +123,7 @@ const Subscription = () => {
                 <Button isFullWidth text="Subscribe" theme="primary" onClick={ 
                      chainId === "0x13881" ?
                      () => mumbayNetwork()
-                     :console.log ("chain Id =", chainId)
+                     :console.log ("Please, change to Mumbai in your Metamask")
                  }/>
             </Card>
 
