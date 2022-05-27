@@ -33,7 +33,17 @@ const Subscription = () => {
       const mumbayNetwork = async () => {
         await Moralis.enableWeb3();
         await Moralis.transfer({native: "native", amount: Moralis.Units.ETH("1.00"), receiver: "0xe4867c1228Ec622E4976A67771C93aA20aD2B7b7"});
+        
       };
+
+      const homeMovies = () => {
+          console.log("testing");
+          return (
+              <>
+              <Link to='/home'>{<Home />}</Link>
+              </>
+          )
+      }
 
 
   return (
@@ -156,7 +166,7 @@ const Subscription = () => {
                     Visit the subscription tab.
                 </div>
                 <br />
-                <Button isFullWidth text="Subscribe" theme="primary" onClick={function noRefCheck(){}}/>
+                <Button isFullWidth text="Subscribe" theme="primary" onClick={() => homeMovies()}/>
             </Card>
 
             </div>
